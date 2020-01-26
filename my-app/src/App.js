@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
+import Tile from './Components/Tile.js';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    category: [
+      {
+        id: 1,
+        name: 'MUSIC Genres',
+        options: ['Indie', 'Hip-Hop', 'Rap']
+      },
+      {
+        id: 2,
+        name: 'Sports',
+        options: ['Basketball', 'Football', 'Soccer']
+      },
+      {
+        id: 3,
+        name: 'Movies',
+        options: ['Interstellar', 'Mirrors', 'Avengers: End Game']
+      },
+      {
+        id: 4,
+        name: 'Video Games',
+        options: ['League of Legends', 'Maplestory', 'Brawl']
+      },
+      {
+        id: 5,
+        name: 'Animals',
+        options: ['Dogs', 'Cats', 'Hamsters']
+      },
+      {
+        id: 6,
+        name: 'Television Shows',
+        options: ['How I Met Your Mother', 'Black Mirrors', 'Friends']
+      }
+    ]
+  }
+
+  render () {
+    return (
+      <div className="App">
+        {this.state.category.map(category => <Tile id={category.id} name={category.name} options={category.options} />)}
+      </div>
+    );
+  }
 }
 
 export default App;

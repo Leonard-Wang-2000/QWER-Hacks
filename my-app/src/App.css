@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+html {
+  animation: change 15s infinite;
+}
+
+@keyframes change {
+    0% {background-color: #1abc9c;}
+    12.5% {background-color: #2ecc71;}
+    25% {background-color: #3498db;}
+    37.5% {background-color: #9b59b6;}
+    50% {background-color: #e74c3c;}
+    62.5% {background-color: #9b59b6;}
+    75% {background-color: #3498db;}
+    100% {background-color: #2ecc71;}
+}
