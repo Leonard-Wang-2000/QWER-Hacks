@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import fire from "./config/fire";
 
-class Login extends Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.login = this.login.bind(this);

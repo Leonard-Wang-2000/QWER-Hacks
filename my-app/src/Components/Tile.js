@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import CategoryPage from '../CategoryPage.js'
+import { Link } from "react-router-dom";
 
 class Tile extends React.Component {
   render() {
@@ -8,9 +10,14 @@ class Tile extends React.Component {
         <a className="Tile" style={tileStyle}> 
           <h1 style={{titleStyle}}>{this.props.name}</h1>
           {this.props.options.map(function(options){ return <p>{options}</p>; })}
+          <button onClick = {this.redirectToCatPage}> vote </button>
         </a>
       </div>
     );
+  }
+
+  redirectToCatPage = () => {
+    /*<CategoryPage id = {PropTypes.number}/>*/
   }
 }
 

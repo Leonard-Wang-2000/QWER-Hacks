@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import fire from "./config/fire";
 import Tile from "./Components/Tile.js";
+import "./App.css"
 
-class Home extends Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
     this.logout = this.logout.bind(this);
@@ -41,7 +42,8 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className = "App"> 
+        <button onClick={this.logout}>Logout</button>
         {this.state.category.map(category => (
           <Tile
             id={category.id}
@@ -49,7 +51,7 @@ class Home extends Component {
             options={category.options}
           />
         ))}
-        <button onClick={this.logout}>Logout</button>
+        
       </div>
     );
   }
