@@ -8,39 +8,31 @@ class Home extends Component {
     this.logout = this.logout.bind(this);
     this.state = {
       user: {},
-      category: [
-        {
-          id: 1,
-          name: "MUSIC Genres",
-          options: ["Indie", "Hip-Hop", "Rap"]
-        },
-        {
-          id: 2,
-          name: "Sports",
-          options: ["Basketball", "Football", "Soccer"]
-        },
-        {
-          id: 3,
-          name: "Movies",
-          options: ["Interstellar", "Mirrors", "Avengers: End Game"]
-        },
-        {
-          id: 4,
-          name: "Video Games",
-          options: ["League of Legends", "Maplestory", "Brawl"]
-        },
-        {
-          id: 5,
-          name: "Animals",
-          options: ["Dogs", "Cats", "Hamsters"]
-        },
-        {
-          id: 6,
-          name: "Television Shows",
-          options: ["How I Met Your Mother", "Black Mirrors", "Friends"]
-        }
-      ]
+      category: []
     };
+  }
+
+  componentDidMount = () => {
+    this.db = fire.firestore();
+    this.unsubscribe = this.db.collection("Categories").onSnapshot((collection) => {
+      let newCategoryList = [];
+      collection.forEach(function(doc){
+        let category = doc.data();
+        let newCategory = {
+          id: category.id,
+          name: category.name,
+          options: category.options
+        };
+        newCategoryList.push(newCategory);
+      });
+      this.setState({
+        category: newCategoryList
+      });
+    });
+  }
+
+  componentWillUnmount = () => {
+    this.unsubscribe();
   }
 
   logout() {
