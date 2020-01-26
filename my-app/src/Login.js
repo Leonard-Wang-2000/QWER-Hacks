@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import fire from "./config/fire";
+import {FormControl, FormGroup, Form, Button} from 'react-bootstrap';
+
 
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.login = this.login.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.signup = this.signup.bind(this);
     this.state = {
       email: "",
       password: ""
     };
   }
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  login(e) {
+  login = e => {
     e.preventDefault();
     fire
       .auth()
@@ -28,7 +27,7 @@ class Login extends React.Component {
       });
   }
 
-  signup(e) {
+  signup = e => {
     e.preventDefault();
     fire
       .auth()
