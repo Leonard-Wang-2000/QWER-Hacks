@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import fire from "./config/fire";
-import {FormControl, FormGroup, Form, Button} from 'react-bootstrap';
-
+import { FormControl, FormGroup, Form, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Swal from "sweetalert2";
 
 class Login extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Login extends React.Component {
 
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
-  }
+  };
 
   login = e => {
     e.preventDefault();
@@ -24,8 +25,13 @@ class Login extends React.Component {
       .then(u => {})
       .catch(error => {
         console.log(error);
+        let message =
+          "Invalid syntax, Email must be valid and Password must be longer than 6 characters";
+
+        let message2 = "RIP Kobe, the goat";
+        Swal.fire(message2);
       });
-  }
+  };
 
   signup = e => {
     e.preventDefault();
@@ -39,7 +45,7 @@ class Login extends React.Component {
       .catch(error => {
         console.log(error);
       });
-  }
+  };
   render() {
     return (
       <div className="col-md-6">

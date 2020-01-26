@@ -3,16 +3,16 @@ import "./App.css";
 import fire from "./config/fire";
 import Home from "./Home";
 import Login from "./Login";
-import NavBar from "./NavBar"
-import CategoryPage from "./CategoryPage"
+import NavBar from "./NavBar";
+import CategoryPage from "./CategoryPage";
 import { Link, Route } from "react-router-dom";
-
+import Music from "./Music";
+import Games from "./Games";
 class App extends React.Component {
   constructor(props) {
     super();
     this.state = {
       user: null
-      
     };
   }
   componentDidMount() {
@@ -32,19 +32,19 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div className="app-container"> 
-        <NavBar/>
-        <Route exact path = "/" component={Home} />
-        <Route exact path = "/login" component={Login} />
-        <Route exact path = "/categories" component={CategoryPage}/>
-        <Route exact path = "/categories/music" component={CategoryPage} />
-        <Route exact path = "/categories/games" component={CategoryPage} />
-        <Route exact path = "/categories/movies" component={CategoryPage} />
-        <Route exact path = "/categories/sports" component={CategoryPage} />
-        <Route exact path = "/categories/tv" component={CategoryPage} />
-        <Route exact path = "/categories/animals" component={CategoryPage} />
+      <div className="App">
+        <NavBar />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/categories" component={CategoryPage} />
+        <Route exact path="/categories/Music%20Genres" component={Music} />
+        <Route exact path="/categories/Games" component={Games} />
+        <Route exact path="/categories/Movies" component={CategoryPage} />
+        <Route exact path="/categories/Sports" component={CategoryPage} />
+        <Route exact path="/categories/TV%20Shows" component={CategoryPage} />
+        <Route exact path="/categories/Animals" component={CategoryPage} />
       </div>
-    )
+    );
   }
 }
 
