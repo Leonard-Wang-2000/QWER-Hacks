@@ -19,7 +19,7 @@ class Tile extends React.Component {
         <a className="Tile" style={tileStyle}> 
           <h1 style={{titleStyle}}>{this.state.name}</h1>
           {this.state.options.map(function(options){ return <p>{options}</p>; })}
-          <Link to={'/{this.state.id}'}> Go </Link>
+          <a href={"/" + this.state.name}> Go </a>
         </a>
       </div>
     );
@@ -30,8 +30,6 @@ class Tile extends React.Component {
   }
 }
 
-
-
 //h1 Style
 const titleStyle = {
   color: 'black',
@@ -40,7 +38,7 @@ const titleStyle = {
 
 //Tile Style
 const tileStyle = {
-  background: 'white',
+  background: '#ffff1a',
   border: 'none',
   cursor: 'pointer',
   margin: '70px 50px 0 50px',

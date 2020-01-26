@@ -11,13 +11,6 @@ class CategoryPage extends React.Component{
         };
     }
 
-    renderCategoryListings = () => {
-        
-
-
-    }
-
-
     componentDidMount = () => {
         this.db = fire.firestore();
         this.unsubscribe = this.db.collection("Categories").onSnapshot((collection) => {
@@ -44,7 +37,26 @@ class CategoryPage extends React.Component{
     render = () => {
         return(
             <div>
- 
+                <ul>
+                    <li>
+                        <Link to="/categories/music">music</Link>
+                    </li>
+                    <li>
+                        <Link to="/categories/games">games</Link>
+                    </li>
+                    <li>
+                        <Link to="/categories/movies">movies</Link>
+                    </li>
+                    <li>
+                        <Link to="/categories/sports">sports</Link>
+                    </li>
+                    <li>
+                        <Link to="/categories/tv">tv</Link>
+                    </li>
+                    <li>
+                        <Link to="/categories/animals">animals</Link>
+                    </li>
+                </ul>
             </div>
         )
     }

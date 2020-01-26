@@ -43,7 +43,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className = "App"> 
-        <button onClick={this.logout}>Logout</button>
+        <h1><button onClick={this.logout}>Logout</button></h1>
         {this.state.category.map(category => (
           <Tile
             id={category.id}

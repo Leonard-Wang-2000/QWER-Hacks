@@ -37,6 +37,15 @@
   }
 }
 
+.app-container {                 /* selecting all elements with class "app-container" */
+  background-color: #5d79d3;   /* makes background a shade of grey */
+  color: #5d79d3;
+  font-size: 16px;               /* sets font size to 16 pixels */
+  padding: 1em;                  /* adds 1 font-size (i.e. 16px) of space inside the element */
+  min-height: calc(100vh - 2em); /* a little complicated! refer to appendix */
+}
+
+/*
 html {
   animation: change 15s infinite;
 }
@@ -51,3 +60,4 @@ html {
     75% {background-color: #3498db;}
     100% {background-color: #2ecc71;}
 }
+*/

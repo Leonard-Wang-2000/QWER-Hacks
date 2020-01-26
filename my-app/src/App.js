@@ -31,14 +31,18 @@ class App extends React.Component {
     });
   };
   render() {
-    //return <div className="App">{this.state.user ? <Home /> : <Login />}</div>;
     return (
-      <div className="App"> 
+      <div className="app-container"> 
         <NavBar/>
         <Route exact path = "/" component={Home} />
         <Route exact path = "/login" component={Login} />
         <Route exact path = "/categories" component={CategoryPage}/>
-        <Route path = "/:id" component={CategoryPage} />
+        <Route exact path = "/categories/music" component={CategoryPage} />
+        <Route exact path = "/categories/games" component={CategoryPage} />
+        <Route exact path = "/categories/movies" component={CategoryPage} />
+        <Route exact path = "/categories/sports" component={CategoryPage} />
+        <Route exact path = "/categories/tv" component={CategoryPage} />
+        <Route exact path = "/categories/animals" component={CategoryPage} />
       </div>
     )
   }

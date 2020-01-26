@@ -1,22 +1,18 @@
 import React from 'react'
-import {Link} from "react-router-dom"
+import "./NavBar.css"
 
 class NavBar extends React.Component{
     render = () => {
         return(
-            <ul>
-                <li>
-                    <Link to = "/">Home</Link> 
-                </li>
-                <li>
-                    <Link to = "/login">Login</Link> 
-                </li>
-                <li>
-                    <Link to = "/categories">Categories</Link> 
-                </li>
-            </ul>
+            <div className = "navBar">
+                <a href="/" className = "navBar" >Home</a> |      
+                <a href="/login" className = "navBar">Login</a> |
+                <a href="/categories" className = "navBar">Categories</a>
+            </div>
         )
     }
 }
+
+
 
 export default NavBar
