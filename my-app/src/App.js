@@ -38,6 +38,7 @@ class App extends React.Component {
         <Route exact path = "/" component={Home} />
         <Route exact path = "/login" component={Login} />
         <Route exact path = "/categories" component={CategoryPage}/>
+        <Route path = "/:id" component={CategoryPage} />
       </div>
     )
   }
