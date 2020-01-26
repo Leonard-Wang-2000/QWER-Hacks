@@ -1,5 +1,4 @@
 import React from "react";
-import Tile from "./Components/Tile.js";
 import "./App.css";
 import fire from "./config/fire";
 import Home from "./Home";
