@@ -28,8 +28,7 @@ class Login extends React.Component {
         let message =
           "Invalid syntax, Email must be valid and Password must be longer than 6 characters";
 
-        let message2 = "RIP Kobe, the goat";
-        Swal.fire(message2);
+        Swal.fire(message);
       });
   };
 
